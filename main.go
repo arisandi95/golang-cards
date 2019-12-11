@@ -5,11 +5,14 @@ import "fmt"
 func main() {
 	// var card string = "Ace of Spades"
 	// card :=  newCard()
-	card := []string{newCard(), "Five of hearts"}
+	cards := newDeck()
 
-	fmt.Println(card)
-}
+	//Deal
+	hand, remaingingCard := deal(cards, 4)
 
-func newCard() string {
-	return "Five of Diamonds"
+	cards.print()
+	fmt.Println("========================")
+	hand.print()
+	fmt.Println("========================")
+	remaingingCard.print()
 }
