@@ -1,18 +1,15 @@
 package main
 
-import "fmt"
-
 func main() {
-	// var card string = "Ace of Spades"
-	// card :=  newCard()
-	cards := newDeck()
+	// cards := newDeck()
+	cards := newDeckFromFile("deck_sands")
 
-	//Deal
-	hand, remaingingCard := deal(cards, 4)
+	// //DEAL
+	// hand, remaingingCard := deal(cards, 4)
+
+	//SAVE DECK TO FILE
+	// cards.saveToFile("deck_sands")
 
 	cards.print()
-	fmt.Println("========================")
-	hand.print()
-	fmt.Println("========================")
-	remaingingCard.print()
+
 }
