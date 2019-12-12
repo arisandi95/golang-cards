@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math/rand"
 	"os"
 	"io/ioutil"
 	"fmt"
@@ -52,7 +53,15 @@ func newDeckFromFile(filename string) deck {
 	}
 
 	sliceString := strings.Split(string(byteString), ",")
-	
+
 	return deck(sliceString)
 
+}
+
+func (d deck) swipe() {
+	for i := range d {
+		newPosition := rand.Intn(len(d))
+
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}	
 }
