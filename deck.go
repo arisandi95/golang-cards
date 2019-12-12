@@ -1,6 +1,7 @@
 package main
 
 import (
+	"time"
 	"math/rand"
 	"os"
 	"io/ioutil"
@@ -59,8 +60,11 @@ func newDeckFromFile(filename string) deck {
 }
 
 func (d deck) swipe() {
+	newSrc := rand.NewSource(time.Now().UnixNano())
+	newRnd := rand.New(newSrc)
+
 	for i := range d {
-		newPosition := rand.Intn(len(d))
+		newPosition := newRnd.Intn(len(d))
 
 		d[i], d[newPosition] = d[newPosition], d[i]
 	}	
