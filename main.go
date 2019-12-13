@@ -17,6 +17,6 @@ func main() {
 	cards.swipe()
 
 	//CETAK
-	// cards.print()
+	cards.print()
 
 }
